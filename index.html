@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Computer Services | IT Experts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00d2ff;
+            --secondary: #3a7bd5;
+            --dark: #0f172a;
+            --accent: #25D366; /* WhatsApp Green */
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark);
+            color: white;
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            background: rgba(15, 23, 42, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo { font-size: 1.4rem; font-weight: 700; color: var(--primary); letter-spacing: 1px; }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(45deg, rgba(15,23,42,0.9), rgba(58,123,213,0.4)), 
+                        url('https://images.unsplash.com/photo-1588702547919-26089e690ecc?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 { font-size: 3.5rem; margin: 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.2rem; color: #e2e8f0; margin: 20px 0; max-width: 700px; }
+
+        /* Container & Grid */
+        .section-title { text-align: center; font-size: 2.5rem; margin: 50px 0; color: var(--primary); }
+        .container { padding: 40px 8%; }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--glass);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: 0.4s;
+            backdrop-filter: blur(5px);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.1);
+            border-color: var(--primary);
+        }
+
+        /* Info Section */
+        .info-box {
+            background: var(--secondary);
+            padding: 40px;
+            border-radius: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            text-align: center;
+        }
+
+        .info-item h4 { margin-bottom: 5px; color: var(--dark); }
+        .info-item p { margin: 0; font-weight: 600; }
+
+        /* Buttons */
+        .btn {
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .btn-wa { background: var(--accent); color: white; }
+        .btn-map { background: white; color: var(--dark); }
+        .btn:hover { transform: scale(1.05); box-shadow: 0 5px 20px rgba(0,0,0,0.3); }
+
+        /* Floating WhatsApp */
+        .float-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            z-index: 2000;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            nav { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">SAI COMPUTER SERVICES</div>
+        <div class="nav-links">
+            <a href="#services" style="color:white; text-decoration:none; margin: 0 10px;">Services</a>
+            <a href="#about" style="color:white; text-decoration:none; margin: 0 10px;">About</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Expert Computer Repair in Delhi & NCR</h1>
+        <p>Your one-stop solution for Laptop Repair, Software Installation, and High-Speed Networking.</p>
+        <div>
+            <a href="https://wa.me/918700032815?text=I%20need%20repair%20service" class="btn btn-wa">Chat on WhatsApp</a>
+            <a href="https://maps.google.com/?q=Shakurpur+Delhi" class="btn btn-map">Visit Shop</a>
+        </div>
+    </header>
+
+    <div class="container" id="services">
+        <h2 class="section-title">Our Specialized Services</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>💻 Laptop & Desktop Repair</h3>
+                <p>We fix all major brands (Dell, HP, Lenovo, Apple). From broken screens to motherboard chip-level repairing.</p>
+            </div>
+            <div class="card">
+                <h3>🛡️ Virus & Software</h3>
+                <p>OS formatting (Windows 10/11), antivirus installation, and recovery of deleted data.</p>
+            </div>
+            <div class="card">
+                <h3>🌐 Networking Setup</h3>
+                <p>CCTV installation, WiFi router configuration, and office LAN networking in Shakurpur.</p>
+            </div>
+            <div class="card">
+                <h3>🔌 Accessories</h3>
+                <p>Buy original chargers, batteries, keyboards, and mouse at the best prices.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="about">
+        <div class="info-box">
+            <div class="info-item">
+                <h4>LOCATION</h4>
+                <p>A-467,Shakurpur, Delhi - 110034</p>
+            </div>
+            <div class="info-item">
+                <h4>TIMINGS</h4>
+                <p>24 Hours</p>
+            </div>
+            <div class="info-item">
+                <h4>EXPERIENCE</h4>
+                <p>10+ Years in IT Services</p>
+            </div>
+        </div>
+    </div>
+
+    <footer style="text-align:center; padding: 40px; border-top: 1px solid var(--glass);">
+        <p>© 2026 Sai Computer Services. Serving Shakurpur with Pride.</p>
+    </footer>
+
+    <a href="https://wa.me/918700032815" class="float-wa" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35" alt="WA">
+    </a>
+
+</body>
+</html>
