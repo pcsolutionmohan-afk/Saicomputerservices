@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sai Computer Services</title>
+    <title>Sai Computer Services | Premium IT Solutions Delhi & NCR</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -40,7 +40,8 @@
         }
         .logo { font-weight: 800; font-size: 1.4rem; color: #fff; text-decoration: none; }
         .logo span { color: var(--accent); }
-        .nav-links a { color: #fff; text-decoration: none; margin-left: 20px; font-size: 0.9rem; font-weight: 600; }
+        .nav-links a { color: #fff; text-decoration: none; margin-left: 20px; font-size: 0.9rem; font-weight: 600; transition: 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
 
         /* --- Hero Section --- */
         .hero {
@@ -52,56 +53,63 @@
         .hero p { color: var(--text-dim); font-size: 1.2rem; margin: 25px auto; max-width: 700px; }
 
         /* --- Brand Marquee --- */
-        .marquee { overflow: hidden; padding: 30px 0; background: rgba(255,255,255,0.01); border-y: 1px solid var(--border); }
+        .marquee { overflow: hidden; padding: 30px 0; background: rgba(255,255,255,0.01); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
         .marquee-track { display: flex; width: max-content; animation: scroll 40s linear infinite; }
         .brand-name { padding: 0 40px; font-weight: 700; color: #475569; letter-spacing: 2px; }
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        /* --- About & Aim --- */
+        /* --- Layout Containers --- */
         .container { padding: 80px 8%; }
-        .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .aim-box { background: var(--glass); padding: 40px; border-radius: 24px; border-left: 4px solid var(--accent); }
-        .aim-box h3 { color: var(--accent); margin-top: 0; }
-
-        /* --- Client/Service Grid --- */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        
         .card { background: var(--glass); border: 1px solid var(--border); padding: 35px; border-radius: 24px; transition: 0.3s; }
         .card:hover { border-color: var(--accent); transform: translateY(-5px); }
         .card h3 { color: var(--accent); margin-bottom: 10px; }
 
-        /* --- Contact & Address --- */
-        .contact-flex { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .map-box { border-radius: 24px; overflow: hidden; min-height: 300px; border: 1px solid var(--border); }
-        .address-text h4 { color: var(--accent); margin: 20px 0 5px; }
+        /* --- About & Aim --- */
+        .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        .aim-box { background: var(--glass); padding: 40px; border-radius: 24px; border-left: 4px solid var(--accent); }
 
-        /* --- Buttons & Floating --- */
-        .btn { background: var(--accent); color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.3s; border: none; cursor: pointer;}
+        /* --- FAQ Accordion --- */
+        details { background: var(--glass); padding: 20px; border-radius: 12px; margin-bottom: 15px; border: 1px solid var(--border); cursor: pointer; }
+        summary { font-weight: 600; color: var(--accent); list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        summary::after { content: '＋'; font-size: 1.2rem; }
+        details[open] summary::after { content: '－'; }
+
+        /* --- Contact --- */
+        .contact-flex { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .map-box { border-radius: 24px; overflow: hidden; min-height: 350px; border: 1px solid var(--border); background: var(--glass); }
+
+        /* --- Buttons --- */
+        .btn { background: var(--accent); color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.3s; border: none; cursor: pointer; }
         .btn:hover { background: var(--secondary); transform: scale(1.05); }
-        .float-wa { position: fixed; bottom: 30px; right: 30px; background: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 1000; }
+        .float-wa { position: fixed; bottom: 30px; right: 30px; background: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; z-index: 1000; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3); }
 
         @media (max-width: 768px) {
             nav { flex-direction: column; gap: 15px; }
             .contact-flex { grid-template-columns: 1fr; }
+            .hero { padding-top: 60px; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#" class="logo">SAI<span> COMPUTER </span> SERVICES</a>
+        <a href="#" class="logo">SAI<span> COMPUTER</span>SERVICES</a>
         <div class="nav-links">
             <a href="#about">About</a>
             <a href="#services">Services</a>
+            <a href="#faq">FAQ</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
 
     <header class="hero">
-        <h1>IT Powering<br>our Ambition.</h1>
-        <p>Expert hardware repair and enterprise-grade networking solutions for schools, industries, and homes.</p>
+        <h1>IT Powering<br>Your Ambition.</h1>
+        <p>Expert hardware repair and enterprise-grade networking solutions for schools, industries, and homes across Delhi NCR.</p>
         <a href="https://wa.me/918700032815" class="btn">BOOK A CONSULTATION</a>
     </header>
-<h1>Deal & Service </h1>
+
     <div class="marquee">
         <div class="marquee-track">
             <div class="brand-name">DELL</div><div class="brand-name">HP</div><div class="brand-name">CISCO</div>
@@ -117,50 +125,91 @@
         <div class="about-grid">
             <div>
                 <h2 style="font-size: 2.5rem;">About Us</h2>
-                <p>Based in Shakurpur, Delhi, Sai Computer Services is a trusted name in high-end IT support. We bridge the gap between complex technology and your business needs.</p>
+                <p>Based in Shakurpur, Delhi, Sai Computer Services is a trusted name in high-end IT support. We specialize in bridging the gap between complex enterprise technology and daily business operations.</p>
             </div>
             <div class="aim-box">
-                <h3>Our Aim</h3>
-                <p>To provide 100% reliable IT uptime for our corporate partners like <strong>Corporate</strong> and <strong>School</strong>, ensuring technology is an asset, never a hurdle.</p>
+                <h3 style="color: var(--accent); margin-top: 0;">Our Aim</h3>
+                <p>To provide <strong>100% reliable IT uptime</strong> for our partners, ensuring technology remains a powerful asset for growth rather than a technical hurdle.</p>
             </div>
         </div>
     </section>
 
     <section class="container" id="services" style="background: rgba(255,255,255,0.01);">
-        <h2 style="text-align: center; margin-bottom: 50px;">Our Services</h2>
+        <h2 style="text-align: center; margin-bottom: 50px; font-size: 2.5rem;">Our Services</h2>
         <div class="grid">
-            <div class="card"><h3>💻 Repair</h3><p>Chip-level motherboard repair and laptop screen replacement.</p></div>
-            <div class="card"><h3>🛡️ Security</h3><p>Professional CCTV surveillance and firewall networking.</p></div>
-            <div class="card"><h3>🏢 Enterprise</h3><p>POS, systems, Printers and IT maintenance.</p></div>
+            <div class="card"><h3>💻 Repair</h3><p>Chip-level motherboard repair, data recovery, and premium laptop screen replacements.</p></div>
+            <div class="card"><h3>🛡️ Security</h3><p>End-to-end CCTV surveillance systems and enterprise firewall networking setup.</p></div>
+            <div class="card"><h3>🏢 Enterprise</h3><p>POS systems, Industrial Printers, Server maintenance, and Corporate AMC solutions.</p></div>
         </div>
-        <br>
-        <h1>Our Clients</h1>
-        <div class="marquee">
-        <div class="marquee-track">
-            <div class="brand-name">Avtar Steel Limited</div><div class="brand-name">KG Overseas Pvt Ltd</div><div class="brand-name">RB Hing</div>
-            <div class="brand-name">Garg Global Innovative Limited</div><div class="brand-name">Garg Global Spices Pvt Ltd</div><div class="brand-name">Cynix</div>
-         
+    </section>
+
+    <section class="container">
+        <h2 style="text-align: center; margin-bottom: 50px; font-size: 2.5rem;">Why Choose Us?</h2>
+        <div class="grid">
+            <div class="card" style="text-align: center;">
+                <div style="font-size: 2.5rem; margin-bottom: 15px;">⚡</div>
+                <h3>Quick Response</h3>
+                <p>On-site support and rapid turnaround for critical hardware failures.</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <div style="font-size: 2.5rem; margin-bottom: 15px;">🛠️</div>
+                <h3>Expert Engineers</h3>
+                <p>Certified technicians with years of experience in enterprise IT environments.</p>
+            </div>
+            <div class="card" style="text-align: center;">
+                <div style="font-size: 2.5rem; margin-bottom: 15px;">💎</div>
+                <h3>Genuine Parts</h3>
+                <p>We only use authentic components to ensure the longevity of your hardware.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="faq" style="background: rgba(255,255,255,0.01);">
+        <h2 style="text-align: center; margin-bottom: 40px; font-size: 2.5rem;">Common Questions</h2>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <details>
+                <summary>Do you provide on-site repair in Delhi/NCR?</summary>
+                <p style="margin-top: 15px; color: var(--text-dim);">Yes! We offer on-site support for networking, CCTV, and corporate maintenance. For complex repairs, we provide a secure pickup and delivery service.</p>
+            </details>
+            <details>
+                <summary>Do you handle Annual Maintenance Contracts (AMC)?</summary>
+                <p style="margin-top: 15px; color: var(--text-dim);">Absolutely. We offer tailored AMC packages for schools, offices, and industries to keep all IT infrastructure running smoothly 24/7.</p>
+            </details>
+            <details>
+                <summary>What is your typical turnaround time?</summary>
+                <p style="margin-top: 15px; color: var(--text-dim);">Minor issues are resolved within 24 hours. Complex chip-level repairs usually take 2-3 business days depending on part availability.</p>
+            </details>
+        </div>
     </section>
 
     <section class="container" id="contact">
         <div class="contact-flex">
             <div class="address-text">
-                <h2>Contact Us</h2>
-                <h4>📍 Address</h4>
+                <h2 style="font-size: 2.5rem;">Get In Touch</h2>
+                <h4 style="color: var(--accent); margin: 20px 0 5px;">📍 Address</h4>
                 <p>A-467, Shakurpur,<br>Delhi - 110034</p>
-                <h4>📞 Phone</h4>
-                <p>+91 8700032815</p>
-                <h4>⏰ Hours</h4>
-                <p>Mon - Sat: 10:00 AM - 8:30 PM</p>
+                <h4 style="color: var(--accent); margin: 20px 0 5px;">📞 Phone</h4>
+                <p><a href="tel:+918700032815" style="color: inherit; text-decoration: none;">+91 8700032815</a></p>
+                <h4 style="color: var(--accent); margin: 20px 0 5px;">⏰ Working Hours</h4>
+                <p>Monday - Sunday: 10:00 AM - 9:30 PM</p>
+                <br>
+                <a href="https://wa.me/918700032815" class="btn">CHAT ON WHATSAPP</a>
+            </div>
+            <div class="map-box">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.244747665042!2d77.1408!3d28.6821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d03b0d0000001%3A0x0!2zMjguNjgxNCIwTiA3Ny4xNDA4IkU!5e0!3m2!1sen!2sin!4v1700000000000" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
         </div>
     </section>
 
-    <footer style="padding: 40px; text-align: center; border-top: 1px solid var(--border); color: var(--text-dim);">
-        &copy; 2026 SAI COMPUTER SERVICES
+    <footer style="padding: 40px; text-align: center; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 0.9rem;">
+        &copy; 2026 SAI COMPUTER SERVICES. All Rights Reserved.
     </footer>
 
-    <a href="https://wa.me/918700032815" class="float-wa">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35" alt="WA">
+    <a href="https://wa.me/918700032815" class="float-wa" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35" alt="WhatsApp">
     </a>
 
 </body>
